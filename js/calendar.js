@@ -98,6 +98,22 @@ function create_product(name, table){
 	});
 	controles.append(clear);
 
+	var remove = $("<img />", {
+		src: "img/remove.svg",
+		height: "30px",
+		width: "30px",
+		class: "control"
+	}).css({
+		"margin-left" : "10px",
+	}).click(function(){
+		$(this).parents("tr").hide(200);
+	}).hover(function(){
+		$(this).attr("src","img/remove_hover.svg");	
+	}, function(){
+		$(this).attr("src","img/remove.svg");
+	});
+	controles.append(remove);
+
 	row.append(controles);
 	table.append(row);
 
