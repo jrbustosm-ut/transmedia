@@ -47,13 +47,13 @@ function create_product(name, table){
 		
 		celda.mousedown(function(event){
 			var img = $(this).find('img');
-			var size = Math.floor(img.height() / 20) * 20;
+			var size = Math.floor(img.height() / 15) * 15;
 			if(event.which==3) {
-    			size -= 20;
-				if(size<0) size=60;
+    			size -= 15;
+				if(size<0) size=45;
 			}else{
-				size += 20;
-				if(size>60) size=0;
+				size += 15;
+				if(size>45) size=0;
 			}
         	img.animate({
 				width: Math.round(size),
