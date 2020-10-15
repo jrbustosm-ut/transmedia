@@ -16,7 +16,7 @@ function parseText(t) {
     var keys = {};
     //separación uno por linea
     var n = true;    
-    t.split(/\n/).forEach(function (t) {
+    t.split(/[\n,]/).forEach(function (t) {
         t = t.substr(0, maxLength).trim();
         t = capitalizeFirstLetter(t.toLowerCase());
         tags[t] = (tags[t] || 0) + 1;
@@ -363,7 +363,11 @@ var layout = d3.layout
         .font("Impact");
     
 
-var svg = d3.select("#vis").append("svg").attr("width", w).attr("height", h);
+var svg = d3.select("#vis")
+   // Container class to make it responsive.
+    .append("svg")
+    .attr("viewBox", `0 0 960 600`)
+;
 
 
 var background = svg.append("g");
